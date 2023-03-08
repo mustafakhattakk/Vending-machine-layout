@@ -1,0 +1,20 @@
+// Get all the buttons
+const buttons = document.querySelectorAll('input[type="button"]');
+
+// Get the ordered list element
+const selectedDrinksList = document.getElementById('selectedDrinks');
+
+// Add a click event listener to each button
+buttons.forEach((button) => {
+  button.addEventListener('click', () => {
+    // Get the value of the button (drink name)
+    const drink = button.value;
+
+    // Create a new list item with the drink name
+    const listItem = document.createElement('li');
+    listItem.textContent = drink;
+
+    // Add the list item to the ordered list
+    selectedDrinksList.appendChild(listItem);
+  });
+});
